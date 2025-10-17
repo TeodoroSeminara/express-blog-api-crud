@@ -10,21 +10,21 @@ const router = express.Router();
 const recipeControllers = require("../controllers/recipeControllers");
 
 // index -GET
-router.get("/", recipeControllers.--);
+router.get("/", recipeControllers.index);
 
 // Show -GET
-router.get("/:id", recipeControllers.--);
+router.get("/:id", recipeControllers.show);
 
 // Store - Create - POST
-router.post("/", recipeControllers.--);
+// router.post("/", recipeControllers.--);
 
 // Update - PUT
-router.put("/:id", recipeControllers.--);
+// router.put("/:id", recipeControllers.--);
 
 // Modify - PATCH
-router.patch("/:id", recipeControllers.--);
+// router.patch("/:id", recipeControllers.--);
 
 // Destroy - DELETE
-router.delete("/:id", recipeControllers.--);
+// router.delete("/:id", recipeControllers.--);
 
-module.export = router
+module.exports = router
