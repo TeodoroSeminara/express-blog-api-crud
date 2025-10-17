@@ -19,12 +19,12 @@ router.get("/:id", recipeControllers.show);
 router.post("/", recipeControllers.store);
 
 // Update - PUT
-// router.put("/:id", recipeControllers.--);
+router.put("/:id", recipeControllers.update);
 
 // Modify - PATCH
-// router.patch("/:id", recipeControllers.--);
+router.patch("/:id", recipeControllers.modify);
 
 // Destroy - DELETE
-// router.delete("/:id", recipeControllers.--);
+router.delete("/:id", recipeControllers.destroy);
 
 module.exports = router
