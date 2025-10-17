@@ -21,7 +21,11 @@ function show(req, res) {
     res.json(ricetta);
 };
 
-// 
+// Store
 
-module.exports = { index, show }
+function store(req, res) {
+    res.send("Creata nuova ricetta");
+}
+
+module.exports = { index, show, store }
 

@@ -16,7 +16,7 @@ router.get("/", recipeControllers.index);
 router.get("/:id", recipeControllers.show);
 
 // Store - Create - POST
-// router.post("/", recipeControllers.--);
+router.post("/", recipeControllers.store);
 
 // Update - PUT
 // router.put("/:id", recipeControllers.--);
