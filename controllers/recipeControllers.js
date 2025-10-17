@@ -6,10 +6,13 @@ const recipe = require("../data/recipe");
 // Index
 function index(req, res) {
     // res.json(recipe);
-    let filteredRecipe = recipe;
+    // let filteredRecipe = recipe;
 
-    
+    let filteredRecipe = recipe.filter((i) => {
+        return i.tags.includes(req.query.tags)
+    })
 
+    res.json(filteredRecipe);
 };
 
 // Show
