@@ -49,7 +49,24 @@ function store(req, res) {
 
 // Update
 function update(req, res) {
-    res.send("Modifica ricetta " + req.params.id);
+    // res.send("Modifica ricetta " + req.params.id);
+    const ricetta = recipe.find((i) => i.id === parseInt(req.params.id));
+
+    if (!ricetta) {
+        return res.status(404).json({
+            error: "Not Found",
+            message: "Ricetta non trovata"
+        })
+    }
+    // va a sostituire i vecchi dati con i nuovi
+    ricetta.title = req.body.title;
+    ricetta.content = req.body.content;
+    ricetta.image = req.body.image;
+    ricetta.tags = req.body.tags;
+
+    console.log("Ricetta Modificata", ricetta, "Array modificato", recipe);
+
+    res.json(ricetta).sendStatus(200);
 }
 
 // Modify
