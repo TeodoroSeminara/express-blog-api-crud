@@ -6,6 +6,9 @@ const app = express();
 const port = 3000;
 // Importo Router e rotte
 const router = require("./routers/posts");
+// Imposto il body-parser
+app.use(express.json());
+
 
 // Imposto rotta di default
 app.get("/", (req, res) => {

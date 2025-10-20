@@ -5,14 +5,13 @@ const recipe = require("../data/recipe");
 
 // Index
 function index(req, res) {
-    // res.json(recipe);
-    // let filteredRecipe = recipe;
 
-    let filteredRecipe = recipe.filter((i) => {
-        return i.tags.includes(req.query.tags)
-    })
+    // let filteredRecipe = recipe.filter((i) => {
+    //     return i.tags.includes(req.query.tags)
+    // })
 
-    res.json(filteredRecipe);
+    // res.json(filteredRecipe);
+    res.json(recipe);
 };
 
 // Show
@@ -30,7 +29,22 @@ function show(req, res) {
 
 // Store
 function store(req, res) {
-    res.send("Creata nuova ricetta");
+    // res.send("Creata nuova ricetta");
+    const newId = recipe[recipe.length - 1].id + 1;
+
+    const newRecipe = {
+        id: newId,
+        title: req.body.title,
+        content: req.body.content,
+        image: req.body.image,
+        tags: req.body.tags
+    }
+
+    recipe.push(newRecipe);
+
+    console.log("Nuovo oggetto", newRecipe, "Array completo", recipe);
+
+    res.status(201).json(newRecipe);
 }
 
 // Update
