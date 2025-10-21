@@ -6,6 +6,12 @@ const app = express();
 const port = 3000;
 // Importo Router e rotte
 const router = require("./routers/posts");
+
+// Importo i middleware
+const notFound = require("./middlewares/notFound")
+// Utilizzo il middleware per tutti i path
+app.use(notFound)
+
 // Imposto il body-parser
 app.use(express.json());
 

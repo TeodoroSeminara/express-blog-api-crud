@@ -66,7 +66,7 @@ function update(req, res) {
 
     console.log("Ricetta Modificata", ricetta, "Array modificato", recipe);
 
-    res.json(ricetta).sendStatus(200);
+    res.status(200).json(ricetta);
 }
 
 // Modify
@@ -88,7 +88,7 @@ function modify(req, res) {
 
     console.log("Ricetta Modificata", ricetta, "Array modificato", recipe);
 
-    res.json(ricetta).sendStatus(200);
+    res.json(ricetta);
 }
 
 // Destroy
